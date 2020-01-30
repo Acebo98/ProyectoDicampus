@@ -20,6 +20,7 @@ namespace ProyectoDicampus
     public partial class frmLogin : Window
     {
         public AccionLogin AccionLogin { get; set; }
+        public string Username { get; private set; }    //Nombre de usuario del que se conecta
 
         public frmLogin()
         {
@@ -55,13 +56,15 @@ namespace ProyectoDicampus
                                 {
                                     Usuario usuario = new Usuario()
                                     {
-                                        Username = tbUsuario.Text,
-                                        Password = pwContra.Password,
+                                        Username = tbUsuario.Text.Trim(),
+                                        Password = pwContra.Password.Trim(),
                                     };
 
                                     //Verificar inicio de sesión
                                     if (context.IniciarSesion(usuario) == true)
                                     {
+                                        this.Username = usuario.Username;   //Lo guardamos...
+                                        this.AccionLogin = AccionLogin.Conectarse;
                                         this.Close();
                                     } 
                                     else

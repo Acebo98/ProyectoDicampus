@@ -83,5 +83,22 @@ namespace ProyectoDicampus.Modelos
 
             return vof;
         }
+
+        //Sacar datos a partir del nombre
+        public Usuario SacarInfo(string username)
+        {
+            Usuario usuario = new Usuario();
+
+            try
+            {
+                usuario = base.Usuarios.Where(user => user.Username == username).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+                usuario = null;
+            }
+
+            return usuario;
+        }
     }
 }

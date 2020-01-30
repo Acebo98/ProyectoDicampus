@@ -39,8 +39,8 @@ namespace ProyectoDicampus
                             if (pwContra.Password.Trim() == pwConfirmarContra.Password.Trim())
                             {
                                 Usuario usuario = new Usuario();
-                                usuario.Username = tbUsuario.Text;
-                                usuario.Password = pwContra.Password;
+                                usuario.Username = tbUsuario.Text.Trim();
+                                usuario.Password = pwContra.Password.Trim();
                                 usuario.Genero = (cbGenero.SelectedIndex == 0) ? true : false;
 
                                 try
