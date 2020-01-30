@@ -15,14 +15,18 @@ using System.Windows.Shapes;
 
 namespace ProyectoDicampus
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        //Cargamos el componente
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
         }
     }
 }
