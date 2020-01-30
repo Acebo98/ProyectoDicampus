@@ -31,6 +31,7 @@ namespace ProyectoDicampus
             tbUsuario.Text = this.Usuario.Username;
             tbScore.Text = this.Usuario.Puntuacion.ToString();
             tbContra.Text = this.Usuario.Password;
+            cbGenero.SelectedIndex = (this.Usuario.Genero == true) ? 0 : 1;
         }
 
         //Volvemos

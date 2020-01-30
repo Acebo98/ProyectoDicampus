@@ -30,6 +30,12 @@
                             <Label>Mi perfil</Label>
                         </StackPanel>
                     </Button>
+                    <Button Name="btnRanking" Width="120" Click="btnSeccion_Click">
+                        <StackPanel>
+                            <Image Height="20" Source="/Resources/podium.png" />
+                            <Label>Ranking</Label>
+                        </StackPanel>
+                    </Button>
                     <Separator/>
                     <Button Name="btnSalir" Width="120" Click="btnSeccion_Click">
                         <StackPanel>

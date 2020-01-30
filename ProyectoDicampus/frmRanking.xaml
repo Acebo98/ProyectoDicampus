@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProyectoDicampus.frmRanking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoDicampus"
+        mc:Ignorable="d" Name="Ventana_Ranking" WindowStyle="None" Loaded="Ventana_Ranking_Loaded"
+        Title="Ranking" Height="412.335" Width="520.485" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <DockPanel>
+        <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
+        <StackPanel Margin="10" VerticalAlignment="Center">
+            <Image Source="/Resources/podium.png" Width="150" />
+            <ListBox Name="lbxRanking" Height="200" Margin="5" SelectionChanged="lbxRanking_SelectionChanged"/>
+            <TextBlock Name="tbScore" VerticalAlignment="Center" Margin="5" FontWeight="Bold">Puntuación:</TextBlock>
+        </StackPanel>
+    </DockPanel>
+</Window>

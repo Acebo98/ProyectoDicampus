@@ -103,6 +103,11 @@ namespace ProyectoDicampus
                 frmPerfil frmPerfil = new frmPerfil(this.Usuario);
                 frmPerfil.ShowDialog();
             }
+            else if (btnClicado == btnRanking)
+            {
+                frmRanking frmRanking = new frmRanking();
+                frmRanking.ShowDialog();
+            }
         }
     }
 }

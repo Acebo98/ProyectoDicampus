@@ -123,6 +123,23 @@ namespace ProyectoDicampus.Modelos
 
             return vof;
         }
+
+        //Sacamos el ranking
+        public List<Usuario> SacarRanking()
+        {
+            List<Usuario> lUsuarios = null;
+
+            try
+            {
+                lUsuarios = base.Usuarios.OrderByDescending(user => user.Puntuacion).ToList();
+            }
+            catch(Exception)
+            {
+                lUsuarios = null;
+            }
+
+            return lUsuarios;
+        }
     }
     #endregion
 
