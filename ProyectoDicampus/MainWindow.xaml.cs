@@ -108,6 +108,14 @@ namespace ProyectoDicampus
                 frmRanking frmRanking = new frmRanking();
                 frmRanking.ShowDialog();
             }
+            else if (btnClicado == btnSalir)
+            {
+                if (MessageBox.Show("¿En serio quieres salir de la aplicación?", "Aviso", 
+                    MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

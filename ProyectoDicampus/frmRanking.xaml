@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoDicampus"
         mc:Ignorable="d" Name="Ventana_Ranking" WindowStyle="None" Loaded="Ventana_Ranking_Loaded"
-        Title="Ranking" Height="412.335" Width="520.485" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Ranking" Height="440.088" Width="520.485" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <DockPanel>
         <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
         <StackPanel Margin="10" VerticalAlignment="Center">
             <Image Source="/Resources/podium.png" Width="150" />
             <ListBox Name="lbxRanking" Height="200" Margin="5" SelectionChanged="lbxRanking_SelectionChanged"/>
             <TextBlock Name="tbScore" VerticalAlignment="Center" Margin="5" FontWeight="Bold">Puntuación:</TextBlock>
+            <Button Name="btnVolver" Width="100" HorizontalAlignment="Right" Click="btnVolver_Click">Volver</Button>
         </StackPanel>
     </DockPanel>
 </Window>

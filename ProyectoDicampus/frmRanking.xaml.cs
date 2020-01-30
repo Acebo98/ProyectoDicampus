@@ -80,5 +80,11 @@ namespace ProyectoDicampus
                     MessageBoxImage.Error);
             }          
         }
+
+        //Volvemos
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
