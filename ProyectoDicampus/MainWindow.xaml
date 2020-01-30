@@ -4,9 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoDicampus"
-        mc:Ignorable="d" Loaded="Window_Loaded"
+        mc:Ignorable="d" Loaded="Window_Loaded" WindowStyle="None"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Border Width="10" Background="Blue" DockPanel.Dock="Left"/>
+        <StackPanel Background="Gray">
+            <Label Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Wheat" FontSize="20" FontWeight="Bold" FontStyle="Italic" DockPanel.Dock="Top">¿Quien quiere ser programador?</Label>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button Name="btnBuscar" Width="120" Click="btnSeccion_Click">
+                        <StackPanel>
+                            <Image Height="20" Source="/Resources/book.png" />
+                            <Label>Buscar pregunta</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnNuevaPregunta" Width="120" Click="btnSeccion_Click">
+                        <StackPanel>
+                            <Image Height="20" Source="/Resources/plus.png" />
+                            <Label>Añadir pregunta</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnPerfil" Width="120" Click="btnSeccion_Click">
+                        <StackPanel>
+                            <Image Height="20" Source="/Resources/user.png" />
+                            <Label>Mi perfil</Label>
+                        </StackPanel>
+                    </Button>
+                    <Separator/>
+                    <Button Name="btnSalir" Width="120" Click="btnSeccion_Click">
+                        <StackPanel>
+                            <Image Height="20" Source="/Resources/logout.png" />
+                            <Label>Salir</Label>
+                        </StackPanel>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+        </StackPanel>
+    </DockPanel>
 </Window>

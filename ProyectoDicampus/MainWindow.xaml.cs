@@ -62,5 +62,11 @@ namespace ProyectoDicampus
                 }              
             }
         }
+
+        //Seleccionamos una sección
+        private void btnSeccion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

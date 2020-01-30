@@ -138,6 +138,16 @@
   <ItemGroup>
     <Resource Include="Resources\clipboard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\book.png" />
+    <Resource Include="Resources\plus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
