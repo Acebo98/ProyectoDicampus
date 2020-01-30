@@ -70,6 +70,22 @@ namespace ProyectoDicampus
             if (tag == this.Pregunta.Correcta)
             {
                 Utils.Utils.CentralizarMensajes("¡Ha acertado la pregunta!");
+                try
+                {
+                    //Aumentamos en 1 la puntuación del usuario...
+                    using (var context = new DAOUsuarios())
+                    {
+                        if (context.AumentarPuntuacion(this.Usuario.Username, 1) == false)
+                        {
+                            throw new Exception("Se ha producido un error");
+                        }
+                    }
+                }
+                catch(Exception err)
+                {
+                    MessageBox.Show(err.Message, "Aviso", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
             }
             else
             {

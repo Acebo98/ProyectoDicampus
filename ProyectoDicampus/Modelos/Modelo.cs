@@ -104,6 +104,25 @@ namespace ProyectoDicampus.Modelos
 
             return usuario;
         }
+
+        //Aumentar puntuacion
+        public bool AumentarPuntuacion(string username, int aSumar)
+        {
+            bool vof = true;
+
+            try
+            {
+                Usuario usuario = this.SacarInfo(username);
+                usuario.Puntuacion += aSumar;
+                base.SaveChanges();
+            }
+            catch(Exception)
+            {
+                vof = !vof;
+            }
+
+            return vof;
+        }
     }
     #endregion
 

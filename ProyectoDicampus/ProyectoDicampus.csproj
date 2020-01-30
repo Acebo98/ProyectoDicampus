@@ -72,6 +72,9 @@
     <Compile Include="frmNuevaPregunta.xaml.cs">
       <DependentUpon>frmNuevaPregunta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="frmPerfil.xaml.cs">
+      <DependentUpon>frmPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistro.xaml.cs">
       <DependentUpon>frmRegistro.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="frmNuevaPregunta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,6 +168,9 @@
   <ItemGroup>
     <Resource Include="Resources\book.png" />
     <Resource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

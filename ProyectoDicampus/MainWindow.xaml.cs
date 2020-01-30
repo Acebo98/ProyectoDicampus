@@ -98,6 +98,11 @@ namespace ProyectoDicampus
                 frmNuevaPregunta frmNuevaPregunta = new frmNuevaPregunta(this.Usuario);
                 frmNuevaPregunta.ShowDialog();
             }
+            else if (btnClicado == btnPerfil)
+            {
+                frmPerfil frmPerfil = new frmPerfil(this.Usuario);
+                frmPerfil.ShowDialog();
+            }
         }
     }
 }
