@@ -50,7 +50,12 @@ namespace ProyectoDicampus
                                         //Comprobamos si el nombre de usuario está pillado
                                         if (context.ComprobarExistencia(usuario.Username) == false)
                                         {
-                                            if (context.Insert(usuario) == false)
+                                            if (context.Insert(usuario) == true)
+                                            {
+                                                Utils.Utils.CentralizarMensajes("Registro realizado satisfactoriamente");
+                                                this.Close();
+                                            }
+                                            else
                                             {
                                                 throw new Exception("Ha ocurrido un error durante el registro");
                                             }

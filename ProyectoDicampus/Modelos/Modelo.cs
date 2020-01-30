@@ -15,8 +15,8 @@ namespace ProyectoDicampus.Modelos
             ConfigurationManager.ConnectionStrings["cadenaconexion"].ConnectionString;
 
         //Tablas
-        protected DbSet<Usuario> Usuarios { get; set; }
-        protected DbSet<Pregunta> Preguntas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Pregunta> Preguntas { get; set; }
 
         public Modelo() : base(cadena) { }
     }
@@ -53,9 +53,13 @@ namespace ProyectoDicampus.Modelos
                 if (base.Usuarios != null)
                 {
                     vof = base.Usuarios.Where(usuario => usuario.Username == username).Any();
-                }            
+                }      
+                else
+                {
+                    throw new Exception();
+                }
             }
-            catch (Exception err)
+            catch (Exception)
             {
                 vof = !vof;
             }
