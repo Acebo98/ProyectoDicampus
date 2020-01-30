@@ -66,7 +66,32 @@ namespace ProyectoDicampus
         //Seleccionamos una sección
         private void btnSeccion_Click(object sender, RoutedEventArgs e)
         {
+            Button btnClicado = (Button)sender;
 
+            switch(btnClicado.Content)
+            {
+                case "Buscar pregunta":
+                    {
+
+                    }
+                    break;
+                case "Añadir pregunta":
+                    {
+                        frmNuevaPregunta frmNuevaPregunta = new frmNuevaPregunta();
+                        frmNuevaPregunta.ShowDialog();
+                    }
+                    break;
+                case "Mi perfil":
+                    {
+
+                    }
+                    break;
+                case "Salir":
+                    {
+
+                    }
+                    break;
+            }
         }
     }
 }

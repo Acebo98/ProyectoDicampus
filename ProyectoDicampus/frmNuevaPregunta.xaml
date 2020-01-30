@@ -1,0 +1,55 @@
+﻿<Window x:Class="ProyectoDicampus.frmNuevaPregunta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoDicampus"
+        mc:Ignorable="d" Name="Window_NuevaPregunta"
+        Title="Nueva pregunta" Height="288.436" Width="409.471">
+    <DockPanel>
+        <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
+        <StackPanel Margin="10" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock FontWeight="Bold">Nombre de la pregunta:</TextBlock>
+                <TextBox Name="tbNombre"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock FontWeight="Bold">Opción 1:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="tbOp1" Width="250" HorizontalAlignment="Left"/>
+                    <RadioButton GroupName="opciones"  Name="rbOp1" VerticalAlignment="Center" Margin="5,0,0,0" IsChecked="True"/>
+                    <TextBlock Margin="5,0,0,0">Opción correcta</TextBlock>
+                </StackPanel>
+                <TextBlock FontWeight="Bold">Opción 2:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="tbOp2" Width="250" HorizontalAlignment="Left"/>
+                    <RadioButton GroupName="opciones" Name="rbOp2" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBlock Margin="5,0,0,0">Opción correcta</TextBlock>
+                </StackPanel>
+                <TextBlock FontWeight="Bold">Opción 3:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="tbOp3" Width="250" HorizontalAlignment="Left"/>
+                    <RadioButton GroupName="opciones" Name="rbOp3" VerticalAlignment="Center" Margin="5,0,0,0" IsChecked="True"/>
+                    <TextBlock Margin="5,0,0,0">Opción correcta</TextBlock>
+                </StackPanel>
+                <TextBlock FontWeight="Bold">Opción 4:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="tbOp4" Width="250" HorizontalAlignment="Left"/>
+                    <RadioButton GroupName="opciones" Name="rbOp4" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBlock Margin="5,0,0,0">Opción correcta</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions >
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Name="btnAñadir" Margin="0,0,5,0" Click="btn_Click">Añadir</Button>
+                <Button Name="btnCancelar" Grid.Column="1" Margin="5,0,0,0" Click="btn_Click">Cancelar</Button>
+            </Grid>
+        </StackPanel>
+    </DockPanel>
+</Window>
