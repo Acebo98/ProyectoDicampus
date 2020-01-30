@@ -20,4 +20,9 @@ namespace ProyectoDicampus.Modelos
 
         public Modelo() : base(cadena) { }
     }
+
+    public class DAOUsuarios : Modelo
+    {
+        public DAOUsuarios() : base() { }
+    }
 }

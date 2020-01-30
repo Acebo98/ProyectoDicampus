@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProyectoDicampus.Utils;
 
 namespace ProyectoDicampus
 {
@@ -23,7 +24,7 @@ namespace ProyectoDicampus
             InitializeComponent();
         }
 
-        //Cargamos el componente
+        //Load pantalla
         private void ventanaLogin_Loaded(object sender, RoutedEventArgs e)
         {
             labFecha.Text = "Fecha: " + DateTime.Today.ToString("dd, MMM yyyy");
@@ -43,7 +44,14 @@ namespace ProyectoDicampus
                     break;
                 case "Conectarse":
                     {
+                        if (Utils.Utils.VerificarCampos(new List<string>() { tbUsuario.Text, pwContra.Password }) == true)
+                        {
 
+                        }
+                        else
+                        {
+                            Utils.Utils.CentralizarMensajes("Introduzca el nombre y la contraseña");
+                        }
                     }
                     break;
                 case "Salir":

@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProyectoDicampus
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica de interacción para frmRegistro.xaml
+    /// </summary>
+    public partial class frmRegistro : Window
     {
-        public MainWindow()
+        public frmRegistro()
         {
             InitializeComponent();
-        }
-
-        //Cargamos el componente
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
-
-            if (frmLogin.AccionLogin == AccionLogin.Salir)
-            {
-                this.Close();
-            }
         }
     }
 }

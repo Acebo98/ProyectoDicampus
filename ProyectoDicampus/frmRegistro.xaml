@@ -1,0 +1,36 @@
+﻿<Window x:Class="ProyectoDicampus.frmRegistro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoDicampus"
+        mc:Ignorable="d"
+        Title="Registro" Height="450" Width="330">
+    <DockPanel>
+        <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
+
+        <StackPanel Margin="10">
+            <TextBlock FontWeight="Bold">Usuario:</TextBlock>
+            <TextBox Name="tbUsuario"/>
+            <TextBlock FontWeight="Bold">Contraseña:</TextBlock>
+            <PasswordBox Name="pwContra"/>
+            <TextBlock FontWeight="Bold">Genero:</TextBlock>
+            <ComboBox Name="cbGenero" Width="156" HorizontalAlignment="Left">
+                <ComboBoxItem>Hombre</ComboBoxItem>
+                <ComboBoxItem>Mujer</ComboBoxItem>
+            </ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Name="btnAceptar" Margin="0,5,5,5">Aceptar</Button>
+                <Button Name="btnCancelar" Grid.Column="1" Margin="0,5,5,5">Cancelar</Button>
+            </Grid>
+        </StackPanel>
+
+    </DockPanel>
+</Window>
