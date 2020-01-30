@@ -66,5 +66,22 @@ namespace ProyectoDicampus.Modelos
 
             return vof;
         }
+
+        //Verificar inicio de sesión
+        public bool IniciarSesion(Usuario entrante)
+        {
+            bool vof = true;
+
+            try
+            {
+                vof = base.Usuarios.Where(user => user.Username == entrante.Username && user.Password == entrante.Password).Any();
+            }
+            catch (Exception)
+            {
+                vof = !vof;
+            }
+
+            return vof;
+        }
     }
 }

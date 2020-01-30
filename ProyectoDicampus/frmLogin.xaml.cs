@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProyectoDicampus.Entidades;
+using ProyectoDicampus.Modelos;
 using ProyectoDicampus.Utils;
 
 namespace ProyectoDicampus
@@ -47,7 +49,32 @@ namespace ProyectoDicampus
                     {
                         if (Utils.Utils.VerificarCampos(new List<string>() { tbUsuario.Text, pwContra.Password }) == true)
                         {
+                            try
+                            {
+                                using (var context = new DAOUsuarios())
+                                {
+                                    Usuario usuario = new Usuario()
+                                    {
+                                        Username = tbUsuario.Text,
+                                        Password = pwContra.Password,
+                                    };
 
+                                    //Verificar inicio de sesión
+                                    if (context.IniciarSesion(usuario) == true)
+                                    {
+                                        this.Close();
+                                    } 
+                                    else
+                                    {
+                                        throw new Exception("Nombre de usuario o contraseña incorrectos");
+                                    }
+                                }
+                            }
+                            catch(Exception err)
+                            {
+                                MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, 
+                                    MessageBoxImage.Error);
+                            }
                         }
                         else
                         {
