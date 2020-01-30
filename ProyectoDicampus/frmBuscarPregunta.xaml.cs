@@ -1,4 +1,5 @@
 ﻿using ProyectoDicampus.Entidades;
+using ProyectoDicampus.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace ProyectoDicampus
     public partial class frmBuscarPregunta : Window
     {
         private Usuario Usuario { get; set; }
+        private Pregunta Pregunta { get; set; }
 
         public frmBuscarPregunta(Usuario usuario)
         {
@@ -30,19 +32,52 @@ namespace ProyectoDicampus
         {
             try
             {
+                using (var context = new DAOPreguntas())
+                {
+                    Pregunta pregunta = context.PreguntaAzar();
+                    if (pregunta != null)
+                    {
+                        this.Pregunta = pregunta;   //Guardamos su instancia
 
+                        //Mostramos los datos de la pregunta en el interfazs
+                        tbNombrePregunta.Text = pregunta.Nombre;
+                        tbOp1.Text = pregunta.Respuesta1;
+                        tbOp2.Text = pregunta.Respuesta2;
+                        tbOp3.Text = pregunta.Respuesta3;
+                        tbOp4.Text = pregunta.Respuesta4;
+                    }
+                    else
+                    {
+                        throw new Exception("Error en la búsqueda de una pregunta");
+                    }
+                }
             }
             catch(Exception err)
             {
                 MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, 
                     MessageBoxImage.Error);
+                this.Close();
             }
         }
 
-        //Seleccionamos una respuesta
+        //Seleccionamos una respuesta y vemos si es correcta
         private void cbSeleccionarRespuesta(object sender, RoutedEventArgs e)
         {
             CheckBox cbSeleccionado = (CheckBox)sender;
+            int tag = Convert.ToInt32(cbSeleccionado.Tag);
+
+            //Miramos si es correcta
+            if (tag == this.Pregunta.Correcta)
+            {
+                Utils.Utils.CentralizarMensajes("¡Ha acertado la pregunta!");
+            }
+            else
+            {
+                MessageBox.Show("¡No es correcto!", "Aviso", MessageBoxButton.OK, 
+                    MessageBoxImage.Error);
+            }
+
+            this.Close();
         }
     }
 }

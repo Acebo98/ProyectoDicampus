@@ -151,7 +151,7 @@ namespace ProyectoDicampus.Modelos
             try
             {
                 List<Pregunta> lPreguntas = base.Preguntas.ToList();
-                pregunta = lPreguntas[rnd.Next(0, lPreguntas.Count - 1)];   //Pregunta al azar
+                pregunta = lPreguntas[rnd.Next(0, lPreguntas.Count)];   //Pregunta al azar
             }
             catch(Exception)
             {

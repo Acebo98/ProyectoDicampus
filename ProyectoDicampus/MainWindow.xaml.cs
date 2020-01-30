@@ -71,7 +71,27 @@ namespace ProyectoDicampus
             //Botón clicado...
             if (btnClicado == btnBuscar)
             {
-
+                try 
+                { 
+                    using (var context = new DAOPreguntas())
+                    {
+                        //Mostramos una pregunta...
+                        if (context.HayPreguntas == true)
+                        {
+                            frmBuscarPregunta frmBuscarPregunta = new frmBuscarPregunta(this.Usuario);
+                            frmBuscarPregunta.ShowDialog();
+                        }
+                        else
+                        {
+                            throw new Exception("Desgraciadamente no hay preguntas almacenadas en estos momentos");
+                        }
+                    }
+                }
+                catch(Exception err)
+                {
+                    MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, 
+                        MessageBoxImage.Error);
+                }
             }
             else if (btnClicado == btnNuevaPregunta)
             {
