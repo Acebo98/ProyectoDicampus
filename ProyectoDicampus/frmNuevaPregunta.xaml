@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoDicampus"
-        mc:Ignorable="d" Name="Window_NuevaPregunta"
-        Title="Nueva pregunta" Height="288.436" Width="409.471">
+        mc:Ignorable="d" Name="Window_NuevaPregunta" WindowStyle="None"
+        Title="Nueva pregunta" Height="267.185" Width="409" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <DockPanel>
         <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
         <StackPanel Margin="10" VerticalAlignment="Center">

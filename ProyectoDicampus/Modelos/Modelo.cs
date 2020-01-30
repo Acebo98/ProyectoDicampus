@@ -21,6 +21,10 @@ namespace ProyectoDicampus.Modelos
         public Modelo() : base(cadena) { }
     }
 
+    #region MODELO USUARIOS
+    //-------------------------------
+    //MODELO PARA LOS USUARIOS
+    //-------------------------------
     public class DAOUsuarios : Modelo
     {
         public DAOUsuarios() : base() { }
@@ -101,4 +105,61 @@ namespace ProyectoDicampus.Modelos
             return usuario;
         }
     }
+    #endregion
+
+    #region MODELO PREGUNTAS
+    //-------------------------------
+    //MODELO PARA LAS PREGUNTAS
+    //-------------------------------
+    public class DAOPreguntas : Modelo
+    {
+        public DAOPreguntas() : base() { }
+
+        //Propiedad para ver si hay preguntas
+        public bool HayPreguntas
+        {
+            get
+            {
+                return base.Preguntas.Count() > 0;
+            }
+        }
+
+        //Insertar una pregunta
+        public bool InsertPregunta(Pregunta nueva)
+        {
+            bool vof = true;
+
+            try
+            {
+                base.Preguntas.Add(nueva);
+                base.SaveChanges();
+            }
+            catch(Exception)
+            {
+                vof = !vof;
+            }
+
+            return vof;
+        }
+
+        //Sacamos una pregunta al azar
+        public Pregunta PreguntaAzar()
+        {
+            Random rnd = new Random();
+            Pregunta pregunta = null;
+
+            try
+            {
+                List<Pregunta> lPreguntas = base.Preguntas.ToList();
+                pregunta = lPreguntas[rnd.Next(0, lPreguntas.Count - 1)];   //Pregunta al azar
+            }
+            catch(Exception)
+            {
+                pregunta = null;
+            }
+
+            return pregunta;
+        }
+    }
+    #endregion
 }

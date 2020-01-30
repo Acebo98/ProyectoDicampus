@@ -66,6 +66,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="frmBuscarPregunta.xaml.cs">
+      <DependentUpon>frmBuscarPregunta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="frmNuevaPregunta.xaml.cs">
       <DependentUpon>frmNuevaPregunta.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
       <DependentUpon>frmRegistro.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\Utils.cs" />
+    <Page Include="frmBuscarPregunta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="frmLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="ProyectoDicampus.frmBuscarPregunta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoDicampus"
+        mc:Ignorable="d" Name="Ventana_BuscarPregunta" WindowStyle="None" Loaded="Ventana_BuscarPregunta_Loaded"
+        Title="Buscar pregunta" Height="194.273" Width="570.044" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <DockPanel>
+        <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
+        <StackPanel DockPanel.Dock="Top" Margin="10" VerticalAlignment="Center">
+            <TextBlock Name="tbNombrePregunta" HorizontalAlignment="Center" FontSize="15">¿NOMBRE_PREGUNTA?</TextBlock>
+            <Separator Height="5" DockPanel.Dock="Top"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="tbOp1">Opcion 1</TextBlock>
+                <CheckBox Name="cbOp1" Tag="0" VerticalAlignment="Center" Margin="5,0,0,0" Checked="cbSeleccionarRespuesta"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="tbOp2">Opcion 2</TextBlock>
+                <CheckBox Name="cbOp2" Tag="1" VerticalAlignment="Center" Margin="5,0,0,0" Checked="cbSeleccionarRespuesta"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="tbOp3">Opcion 3</TextBlock>
+                <CheckBox Name="cbOp3" Tag="2" VerticalAlignment="Center" Margin="5,0,0,0" Checked="cbSeleccionarRespuesta"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="tbOp4">Opcion 4</TextBlock>
+                <CheckBox Name="cbOp4" Tag="3" VerticalAlignment="Center" Margin="5,0,0,0" Checked="cbSeleccionarRespuesta"/>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

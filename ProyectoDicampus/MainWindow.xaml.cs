@@ -68,29 +68,15 @@ namespace ProyectoDicampus
         {
             Button btnClicado = (Button)sender;
 
-            switch(btnClicado.Content)
+            //Botón clicado...
+            if (btnClicado == btnBuscar)
             {
-                case "Buscar pregunta":
-                    {
 
-                    }
-                    break;
-                case "Añadir pregunta":
-                    {
-                        frmNuevaPregunta frmNuevaPregunta = new frmNuevaPregunta();
-                        frmNuevaPregunta.ShowDialog();
-                    }
-                    break;
-                case "Mi perfil":
-                    {
-
-                    }
-                    break;
-                case "Salir":
-                    {
-
-                    }
-                    break;
+            }
+            else if (btnClicado == btnNuevaPregunta)
+            {
+                frmNuevaPregunta frmNuevaPregunta = new frmNuevaPregunta(this.Usuario);
+                frmNuevaPregunta.ShowDialog();
             }
         }
     }
