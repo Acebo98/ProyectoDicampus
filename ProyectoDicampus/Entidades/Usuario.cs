@@ -17,7 +17,7 @@ namespace ProyectoDicampus.Entidades
         [MaxLength(100)]
         public String Password { get; set; }
         [Required]
-        public Boolean Genero { get; set; }
+        public Boolean Genero { get; set; } //True -> Hombre, False -> Mujer
         [Required]
         [Range(0, 99999)]
         public int Puntuacion { get; set; }

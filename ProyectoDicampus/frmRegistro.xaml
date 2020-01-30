@@ -4,18 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoDicampus"
-        mc:Ignorable="d"
-        Title="Registro" Height="450" Width="330">
+        mc:Ignorable="d" WindowStyle="None"
+        Title="Registro" Height="420" Width="330" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <DockPanel>
         <Border Width="{Binding Width}" Height="10" Background="Blue" DockPanel.Dock="Top"/>
-
+        <Image Source="/Resources/clipboard.png" Width="190" Margin="10" DockPanel.Dock="Top"/>
         <StackPanel Margin="10">
             <TextBlock FontWeight="Bold">Usuario:</TextBlock>
             <TextBox Name="tbUsuario"/>
             <TextBlock FontWeight="Bold">Contraseña:</TextBlock>
             <PasswordBox Name="pwContra"/>
+            <TextBlock FontWeight="Bold">Confirmar Contraseña:</TextBlock>
+            <PasswordBox Name="pwConfirmarContra"/>
             <TextBlock FontWeight="Bold">Genero:</TextBlock>
-            <ComboBox Name="cbGenero" Width="156" HorizontalAlignment="Left">
+            <ComboBox Name="cbGenero" Width="156" HorizontalAlignment="Left" SelectedIndex="0">
                 <ComboBoxItem>Hombre</ComboBoxItem>
                 <ComboBoxItem>Mujer</ComboBoxItem>
             </ComboBox>
@@ -27,8 +29,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Button Name="btnAceptar" Margin="0,5,5,5">Aceptar</Button>
-                <Button Name="btnCancelar" Grid.Column="1" Margin="0,5,5,5">Cancelar</Button>
+                <Button Name="btnAceptar" Margin="0,5,5,5" Click="btn_Click">Aceptar</Button>
+                <Button Name="btnCancelar" Grid.Column="1" Margin="0,5,5,5" Click="btn_Click">Cancelar</Button>
             </Grid>
         </StackPanel>
 

@@ -39,7 +39,8 @@ namespace ProyectoDicampus
             {
                 case "Registrarse":
                     {
-
+                        frmRegistro frmRegistro = new frmRegistro();
+                        frmRegistro.ShowDialog();
                     }
                     break;
                 case "Conectarse":
