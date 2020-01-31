@@ -11,17 +11,28 @@
         <Image Source="/Resources/profile.png" Margin="10" Width="100" DockPanel.Dock="Left" />
         <StackPanel Margin="10" VerticalAlignment="Center">
             <TextBlock FontWeight="Bold">Usuario:</TextBlock>
-            <TextBox Name="tbUsuario" IsReadOnly="True"/>
+            <TextBox Name="tbUsuario" />
             <TextBlock FontWeight="Bold">Contraseña:</TextBlock>
-            <TextBox Name="tbContra" IsReadOnly="True"/>
+            <TextBox Name="tbContra" />
             <TextBlock FontWeight="Bold">Genero:</TextBlock>
             <ComboBox Name="cbGenero" Width="156" HorizontalAlignment="Left" SelectedIndex="0">
                 <ComboBoxItem>Hombre</ComboBoxItem>
                 <ComboBoxItem>Mujer</ComboBoxItem>
             </ComboBox>
             <TextBlock FontWeight="Bold">Puntuación:</TextBlock>
-            <TextBox Name="tbScore" IsReadOnly="True"/>
-            <Button Name="btnVolver" Margin="0,5,0,0" Click="btnVolver_Click">Volver</Button>
+            <TextBox Name="tbScore" IsReadOnly="True" Background="Wheat"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Name="btnModificar" Margin="0,5,5,0" Click="btnVolver_Click">Modificar</Button>
+                <Button Name="btnVolver" Margin="5,5,0,0" Click="btnVolver_Click" Grid.Column="1">Volver</Button>
+            </Grid>
+           
         </StackPanel>
     </DockPanel>
 </Window>

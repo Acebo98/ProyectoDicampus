@@ -54,14 +54,23 @@ namespace ProyectoDicampus.Modelos
 
             try
             {
-                if (base.Usuarios != null)
-                {
-                    vof = base.Usuarios.Where(usuario => usuario.Username == username).Any();
-                }      
-                else
-                {
-                    throw new Exception();
-                }
+                vof = base.Usuarios.Where(usuario => usuario.Username == username).Any();
+            }
+            catch (Exception)
+            {
+                vof = !vof;
+            }
+
+            return vof;
+        }
+        public bool ComprobarExistencia(string nuevoUser, string antiguoUser)
+        {
+            bool vof = true;
+
+            try
+            {
+                vof = base.Usuarios.Where(usuario => usuario.Username == nuevoUser 
+                    && usuario.Username != antiguoUser).Any();
             }
             catch (Exception)
             {
@@ -96,6 +105,21 @@ namespace ProyectoDicampus.Modelos
             try
             {
                 usuario = base.Usuarios.Where(user => user.Username == username).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+                usuario = null;
+            }
+
+            return usuario;
+        }
+        public Usuario SacarInfo(int identificador)
+        {
+            Usuario usuario = new Usuario();
+
+            try
+            {
+                usuario = base.Usuarios.Where(user => user.ID == identificador).SingleOrDefault();
             }
             catch (Exception)
             {
@@ -139,6 +163,28 @@ namespace ProyectoDicampus.Modelos
             }
 
             return lUsuarios;
+        }
+
+        //Modificar perfil
+        public bool ModificarPerfil(Usuario nuevo)
+        {
+            bool vof = true;
+
+            try
+            {
+                Usuario modificar = base.Usuarios.Where(user => user.ID == nuevo.ID).Single();
+                modificar.Password = nuevo.Password;
+                modificar.Username = nuevo.Username;
+                modificar.Genero = nuevo.Genero;
+
+                base.SaveChanges();
+            }
+            catch (Exception)
+            {
+                vof = !vof;
+            }
+
+            return vof;
         }
     }
     #endregion

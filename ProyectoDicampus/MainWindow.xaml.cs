@@ -100,8 +100,25 @@ namespace ProyectoDicampus
             }
             else if (btnClicado == btnPerfil)
             {
-                frmPerfil frmPerfil = new frmPerfil(this.Usuario);
+                frmPerfil frmPerfil = new frmPerfil(this.Usuario.ID);
                 frmPerfil.ShowDialog();
+
+                //Si hemos modificado cargamos los datos actualizados
+                if (frmPerfil.ResultadoPerfil == ResultadoPerfil.Modificar)
+                {
+                    try
+                    {
+                        using (var context = new DAOUsuarios())
+                        {
+                            this.Usuario = context.SacarInfo(this.Usuario.ID);
+                        }
+                    }
+                    catch(Exception err)
+                    {
+                        MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, 
+                            MessageBoxImage.Error);
+                    }
+                }
             }
             else if (btnClicado == btnRanking)
             {
